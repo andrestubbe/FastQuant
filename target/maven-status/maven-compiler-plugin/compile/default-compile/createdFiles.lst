@@ -1,0 +1,5 @@
+fastquant\ansi\FastQuantAnsi.class
+fastquant\binary\BinaryVector.class
+fastquant\scalar\Int8Vector.class
+fastquant\Demo.class
+fastquant\FastQuant.class
