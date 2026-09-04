@@ -47,7 +47,8 @@ public class Example {
 
 - [Why FastQuant?](#why-fastquant)
 - [Quick Start](#quick-start)
-- [Features](#features)
+- [Key Features](#key-features)
+- [Real-World Use Cases](#real-world-use-cases)
 - [Performance Benchmarks](#performance-benchmarks)
 - [API Quick Reference](#api-quick-reference)
 - [Technical Examples & Hero Demos](#technical-examples--hero-demos)
@@ -75,13 +76,22 @@ Standard JVM vector stores and numeric routines suffer from memory bloat when sc
 
 ---
 
-## Features
+## Key Features
 
 - **🔢 INT8 Uniform Scalar Quantization**: Dynamic min/max scaling with symmetric and asymmetric zero-point mapping.
 - **⚡ 1-Bit Binary Sign Quantization**: 64-bit word bit-packing for ultra-dense similarity caching.
 - **🎯 SIMD Distance Metrics**: Fast dot-product, Euclidean distance, and hardware-accelerated Hamming distance.
 - **📦 Zero-Allocation Structs**: Pre-sized value carriers preventing GC churn during high-throughput vector ingestion.
 - **📊 FastANSI 120-Column HUD**: Terminal telemetry displaying memory densities, compression ratios, and microsecond latencies.
+
+---
+
+## Real-World Use Cases
+
+- 🧠 **Enterprise RAG & High-Density Vector Stores ([FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB))**: Store 10+ million document embeddings on modest hardware instances without OutOfMemory errors, compressing 1,536-dim vectors from 6.14 GB down to 1.53 GB (INT8) or 192 MB (1-Bit).
+- ⚡ **Sub-Millisecond Two-Stage Vector Search**: Scan 1,000,000 candidate passages in < 5 ms via bitwise `POPCNT` (Stage 1), then re-rank only the Top-100 candidates with full FP32/INT8 precision (Stage 2).
+- 🤖 **On-Device Local AI & Embedding Caching ([FastAIModel](https://github.com/andrestubbe/FastAIModel))**: In-memory caching of semantic queries and prompt embeddings with minimal heap pressure and zero GC stalls.
+- 🎧 **High-Throughput Audio DSP & Neural Audio Search**: Compress real-time spectral feature vectors, MFCC fingerprints, and latent audio representations for instant similarity matching.
 
 ---
 
