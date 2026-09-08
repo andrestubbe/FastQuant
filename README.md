@@ -12,6 +12,8 @@
 
 **FastQuant** is a high-throughput numerical quantization engine designed to compress AI model weights, high-dimensional vector embeddings (**[FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB)**), and audio DSP buffers with 75% to 96.8% memory reductions while preserving floating-point cosine similarity precision at tens of millions of operations per second.
 
+Watch Demo (YouTube) | Watch JMH Benchmark (YouTube)
+
 ---
 
 ## Quick Start
