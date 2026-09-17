@@ -76,6 +76,13 @@ Standard JVM vector stores and numeric routines suffer from memory bloat when sc
 - **Native Bitwise Acceleration**: Computes vector similarity via bitwise `XOR` and hardware `POPCNT` at over **77,000,000 ops/sec**.
 - **Two-Stage Search Optimization**: Enables instant 1-bit filtering over millions of candidates followed by high-precision INT8/FP32 refinement.
 
+| Feature | Raw Java FP32 (float[]) | Apache Lucene HNSW | FastQuant |
+|:---|:---|:---|:---|
+| **RAM (1M 1536-dim)** | 6.14 GB JVM heap | ~4–8 GB index memory | **192 MB (1-Bit) / 1.53 GB (INT8)**|
+| **Quantization Modes** | None (FP32 only) | Scalar 8-bit quantization | **INT8, INT4, 1-Bit Binary (Sign)**|
+| **Distance Throughput**| ~5-10M ops/s (CPU FP32) | ~15-25M ops/s | **> 77,000,000 ops/s (POPCNT / SIMD)**|
+| **Search Architecture**| Exhaustive / Brute-force | Graph search overhead | **Two-stage filter (1-Bit → INT8 refactor)**|
+
 ---
 
 ## Key Features
